@@ -108,7 +108,7 @@ export function Header() {
 
 
       {isOpen && (
-        <div className="fixed inset-0 bg-background z-40 flex flex-col items-center p-6 space-y-6">
+        <div className="fixed inset-0 bg-black z-40 flex flex-col items-center p-6 space-y-6">
           <button
             className="absolute top-4 right-4 p-2"
             onClick={() => setIsOpen(false)}

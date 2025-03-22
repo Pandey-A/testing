@@ -32,7 +32,7 @@ export default function RootLayout({
       className={`${GeistSans.className} dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-background text-foreground">
+      <body className="min-h-screen bg-black text-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

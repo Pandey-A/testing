@@ -2,8 +2,13 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ReactElement } from "react";
 
-import { MarkdownRenderer } from "@/components/markdown/mdx-renderer";
 import { getBlogPosts, getPost } from "@/lib/mdx";
+import dynamic from "next/dynamic";
+
+const DynamicMarkdownRenderer = dynamic(
+  () => import("@/components/markdown/mdx-renderer").then((mod) => mod.MarkdownRenderer),
+  { ssr: !!false }
+)
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -46,7 +51,7 @@ export default async function BlogPost({
             <span>{post.readingTime}</span>
           </div>
         </header>
-        <MarkdownRenderer
+        <DynamicMarkdownRenderer
           content={post.content}
           frontmatter={{
             title: post.title,

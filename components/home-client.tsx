@@ -280,7 +280,7 @@ const HomeClientComponent: FC<HomeClientComponentProps> = ({
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-black">
       <section className="w-full relative">
         <HeroGeometric
           badge="Upcoming event on 29th March"
